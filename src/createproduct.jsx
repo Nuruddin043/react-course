@@ -13,7 +13,7 @@ const CreateProduct = () => {
         try{
             updateBtnState(true)
             setLoading(true)
-            await axios.post("https://fakestoreapi.com/products",{
+            await axios.post("http://54.162.199.74/products",{
                 title,price,image,description,category
             })
             updateBtnState(false)

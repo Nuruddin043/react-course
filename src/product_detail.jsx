@@ -11,7 +11,7 @@ const ProductDetail = () => {
         async function getData(){
             try{
                 let product_id=params.id
-                const {data}=await axios.get(`https://fakestoreapi.com/products/${product_id}`)
+                const {data}=await axios.get(`http://54.162.199.74/products/${product_id}`)
               
                 setProduct(data)
                 setLoading(false)

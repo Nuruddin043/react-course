@@ -9,7 +9,7 @@ const Product = (props) => {
     useEffect(() => {
         async function getData(){
             try {
-                const { data } = await axios.get('https://fakestoreapi.com/products');
+                const { data } = await axios.get('http://54.162.199.74/products');
                 setProductlist(data)
                 setLoading(false)
             } catch (e) {

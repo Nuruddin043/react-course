@@ -17,7 +17,7 @@ const UpdateProduct = () => {
             try{
                 setLoading(true)
                 let product_id=params.id
-                const {data}=await axios.get(`https://fakestoreapi.com/products/${product_id}`)
+                const {data}=await axios.get(`http://54.162.199.74/products/${product_id}`)
                 setTitle(data.title)
                 setPrice(data.price)
                 setDescription(data.description)
@@ -37,7 +37,7 @@ const UpdateProduct = () => {
         try{
             updateBtnState(true)
             setLoading(true)
-            await axios.post("https://fakestoreapi.com/products",{
+            await axios.post("http://54.162.199.74/products",{
                 title,price,image,description,category
             })
             updateBtnState(false)
