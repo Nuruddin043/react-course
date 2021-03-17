@@ -1,38 +1,41 @@
 import './App.css';
-import {BrowserRouter as Router,Route,Switch,Link,Redirect} from 'react-router-dom'
-import Product from './product'
-import ProductDetail from   './product_detail'
-import CreateProduct  from './createproduct'
-import UpdateProduct from './product_update'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,Redirect
+} from "react-router-dom";
+import Home from './containers/home';
+import Services from './containers/services';
+import About from './containers/about';
+import NotFound from './containers/not_found';
+import Layout from './components/layout'
 
 function App() {
-  
   return (
     <Router>
-      <Link to="/">Home </Link>  
-      <Link to="/create_product">Create Products </Link>  
-      
-      <br /><br /><br /><br /><br />
-      <Switch>
-        <Route exact path={'/'}> 
-              <Product />
+    <Layout>
+
+    <Switch>
+        <Route exact path={'/'} >
+          <Home />
         </Route>
-        <Route exact path={'/create_product'}> 
-           <CreateProduct />
+        <Route exact path={'/services'} >
+          <Services />
         </Route>
-        <Route exact path={'/product-details/:id'}> 
-            <ProductDetail />
+        <Route exact path={'/about'} >
+          <About />
         </Route>
-        <Route exact path={'/update_product/:id'}> 
-            <UpdateProduct />
+        <Route exact path={'/404'} >
+          <NotFound />
         </Route>
-        <Route exact path="/404">
-            <h1>Page not found</h1>
-          </Route>
-        <Route path="*">
-            <Redirect to="/404" />
-          </Route>
+        <Route  path={'*'} >
+          <Redirect to={'/404'} />
+        </Route>
+    
       </Switch>
+    </Layout>
+
+
     </Router>
   );
 }
